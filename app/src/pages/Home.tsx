@@ -53,25 +53,36 @@ function Home() {
       <main className="px-4 mt-6 space-y-6 max-w-md mx-auto">
 
         {/* ProgressCard - Hero with Ring */}
-        <div className="rounded-2xl bg-card border border-border shadow-sm p-4 flex flex-col items-center">
+        <div className="rounded-2xl bg-card border border-border shadow-sm p-5 flex flex-col items-center">
           <div className="relative w-[200px] h-[200px]">
             <GradientRing
               value={progress}
               size={200}
               thickness={14}
             />
-            {/* Center text with proper z-index */}
+            {/* Center text */}
             <div className="absolute inset-0 grid place-items-center z-10">
               <div className="text-center">
-                <div className="text-3xl font-bold text-foreground">{currentWeight}kg</div>
-                <div className="text-sm text-muted-foreground">あと{remain}kgで目標</div>
+                <div className="text-4xl font-bold text-foreground leading-none">{currentWeight}kg</div>
+                <div className="text-sm text-muted-foreground mt-1">あと{remain}kgで目標</div>
               </div>
             </div>
           </div>
-          {/* Single line subtitle */}
-          <p className="mt-3 text-sm text-muted-foreground">
-            目標 {targetWeight}kg / 開始 {startWeight}kg ・ 達成率 {progress}%
-          </p>
+          {/* Secondary metrics (centered, non-wrapping) */}
+          <div className="mt-4 grid grid-cols-3 gap-3 w-full">
+            <div className="text-center">
+              <div className="text-xs text-muted-foreground">目標</div>
+              <div className="text-base font-semibold text-foreground">{targetWeight}kg</div>
+            </div>
+            <div className="text-center">
+              <div className="text-xs text-muted-foreground">開始</div>
+              <div className="text-base font-semibold text-foreground">{startWeight}kg</div>
+            </div>
+            <div className="text-center">
+              <div className="text-xs text-muted-foreground">達成率</div>
+              <div className="text-base font-semibold text-foreground">{progress}%</div>
+            </div>
+          </div>
         </div>
 
         {/* SparklineCard - Everything contained within p-4 */}
