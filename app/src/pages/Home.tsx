@@ -102,13 +102,13 @@ function Home() {
             className="rounded-2xl bg-card border border-border shadow-sm min-h-[88px] p-4 hover:shadow-md active:shadow-inner transition-all flex items-center justify-center"
             onClick={() => window.location.href = '/log'}
           >
-            <span className="font-bold text-foreground">食事を記録</span>
+            <span className="font-bold text-base text-foreground">食事を記録</span>
           </button>
           <button
             className="rounded-2xl bg-card border border-border shadow-sm min-h-[88px] p-4 hover:shadow-md active:shadow-inner transition-all flex items-center justify-center"
             onClick={() => window.location.href = '/coach'}
           >
-            <span className="font-bold text-foreground">アドバイス</span>
+            <span className="font-bold text-base text-foreground">アドバイス</span>
           </button>
         </div>
 
