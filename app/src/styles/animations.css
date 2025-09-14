@@ -2,12 +2,12 @@
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  50% { transform: translateY(-10px); }
 }
 
 @keyframes glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(255, 179, 0, 0.5); }
-  50% { box-shadow: 0 0 40px rgba(255, 179, 0, 0.8), 0 0 60px rgba(255, 179, 0, 0.4); }
+  0%, 100% { box-shadow: 0 0 10px rgba(53, 198, 166, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(53, 198, 166, 0.5), 0 0 30px rgba(53, 198, 166, 0.2); }
 }
 
 @keyframes slideInUp {
@@ -59,36 +59,33 @@
   animation: heartbeat 1.5s ease-in-out infinite;
 }
 
-/* Glassmorphism effect */
+/* Glassmorphism effect - more subtle */
 .glass {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .glass-dark {
-  background: rgba(26, 42, 74, 0.25);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(26, 42, 74, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-/* Gradient text with shimmer */
-.gradient-text-shimmer {
+/* Gradient text - professional */
+.gradient-text {
   background: linear-gradient(
-    90deg,
+    135deg,
     #1A2A4A 0%,
-    #FFB300 25%,
-    #35C6A6 50%,
-    #FFB300 75%,
-    #1A2A4A 100%
+    #35C6A6 100%
   );
-  background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shimmer 3s linear infinite;
 }
 
 /* Neumorphism */
@@ -184,10 +181,10 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #FFB300, #35C6A6);
+  background: #A1A1AA;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #35C6A6, #1A2A4A);
+  background: #71717A;
 }
