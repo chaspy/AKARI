@@ -12,9 +12,7 @@ export function TabBar() {
           to="/"
           className={({ isActive }) =>
             `flex flex-col items-center justify-center gap-0.5 py-2 px-3 rounded-lg transition-colors min-h-[44px] ${
-              isActive
-                ? 'text-[rgb(98,183,156)]'
-                : 'text-[rgb(99,102,106)]'
+              isActive ? 'text-primary' : 'text-muted-foreground'
             }`
           }
         >
@@ -25,9 +23,7 @@ export function TabBar() {
           to="/log"
           className={({ isActive }) =>
             `flex flex-col items-center justify-center gap-0.5 py-2 px-3 rounded-lg transition-colors min-h-[44px] ${
-              isActive
-                ? 'text-[rgb(98,183,156)]'
-                : 'text-[rgb(99,102,106)]'
+              isActive ? 'text-primary' : 'text-muted-foreground'
             }`
           }
         >
@@ -38,9 +34,7 @@ export function TabBar() {
           to="/coach"
           className={({ isActive }) =>
             `flex flex-col items-center justify-center gap-0.5 py-2 px-3 rounded-lg transition-colors min-h-[44px] ${
-              isActive
-                ? 'text-[rgb(98,183,156)]'
-                : 'text-[rgb(99,102,106)]'
+              isActive ? 'text-primary' : 'text-muted-foreground'
             }`
           }
         >
