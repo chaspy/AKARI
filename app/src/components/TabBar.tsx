@@ -4,8 +4,8 @@ import { Home, PenLine, MessageSquare } from 'lucide-react';
 export function TabBar() {
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 z-[100] bg-white"
-      style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
+      className="fixed bottom-0 left-0 right-0 w-full z-[100] bg-white"
+      style={{ paddingBottom: 'env(safe-area-inset-bottom)', bottom: 0 as any }}
     >
       <div className="h-[64px] px-6 grid grid-cols-3 items-center">
         <NavLink
