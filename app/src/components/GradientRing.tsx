@@ -18,8 +18,8 @@ export function GradientRing({
     <svg width={size} height={size}>
       <defs>
         <linearGradient id={id} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="rgb(239 217 190)" />
-          <stop offset="100%" stopColor="rgb(98 183 156)" />
+          <stop offset="0%" stopColor="oklch(0.92 0.05 160)" />
+          <stop offset="100%" stopColor="var(--primary)" />
         </linearGradient>
       </defs>
       <circle

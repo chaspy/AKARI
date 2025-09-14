@@ -53,10 +53,10 @@ function Settings() {
   };
 
   return (
-    <div className="min-h-[100dvh] bg-white pb-[calc(64px+env(safe-area-inset-bottom))]">
+    <div className="min-h-[100dvh] bg-background pb-[calc(64px+env(safe-area-inset-bottom))]">
       {/* Header - NO BORDER */}
       <header
-        className="bg-[rgb(255,239,245)] px-4 pb-2"
+        className="bg-background px-4 pb-2"
         style={{ paddingTop: 'env(safe-area-inset-top, 12px)' }}
       >
         <div className="flex items-center max-w-md mx-auto">
@@ -64,11 +64,11 @@ function Settings() {
             className="mr-3 p-2 rounded-full hover:bg-white/50 transition-colors"
             onClick={() => navigate(-1)}
           >
-            <ArrowLeft className="h-5 w-5 text-[rgb(99,102,106)]" />
+            <ArrowLeft className="h-5 w-5 text-muted-foreground" />
           </button>
           <div>
-            <h1 className="text-2xl font-bold text-[rgb(25,25,25)]">設定</h1>
-            <p className="text-sm text-[rgb(99,102,106)]">通知・プロフィール</p>
+            <h1 className="text-2xl font-bold text-foreground">設定</h1>
+            <p className="text-sm text-muted-foreground">通知・プロフィール</p>
           </div>
         </div>
       </header>
@@ -76,16 +76,16 @@ function Settings() {
       {/* Main Content with STRICT 8pt grid */}
       <main className="px-4 mt-6 space-y-6 max-w-md mx-auto">
         {/* Notification Settings Card - NO BORDER */}
-        <div className="rounded-2xl bg-white shadow-[0_2px_10px_rgba(0,0,0,0.05)] p-6">
-          <h2 className="text-base font-semibold text-[rgb(25,25,25)] mb-4">通知設定</h2>
+        <div className="rounded-2xl bg-card border border-border shadow-sm p-6">
+          <h2 className="text-base font-semibold text-foreground mb-4">通知設定</h2>
 
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <Bell className="h-5 w-5 text-[rgb(99,102,106)]" />
+                <Bell className="h-5 w-5 text-muted-foreground" />
                 <div>
                   <Label className="text-sm">通知を有効化</Label>
-                  <p className="text-xs text-[rgb(99,102,106)]">食事記録のリマインダー</p>
+                  <p className="text-xs text-muted-foreground">食事記録のリマインダー</p>
                 </div>
               </div>
               <Switch
@@ -95,11 +95,7 @@ function Settings() {
             </div>
 
             {notificationEnabled && (
-              <Button
-                variant="outline"
-                className="w-full"
-                onClick={testNotification}
-              >
+              <Button variant="outline" className="w-full" onClick={testNotification}>
                 テスト通知を送信
               </Button>
             )}
@@ -107,8 +103,8 @@ function Settings() {
         </div>
 
         {/* Profile Settings Card - NO BORDER */}
-        <div className="rounded-2xl bg-white shadow-[0_2px_10px_rgba(0,0,0,0.05)] p-6">
-          <h2 className="text-base font-semibold text-[rgb(25,25,25)] mb-4">プロフィール</h2>
+        <div className="rounded-2xl bg-card border border-border shadow-sm p-6">
+          <h2 className="text-base font-semibold text-foreground mb-4">プロフィール</h2>
 
           <div className="space-y-4">
             <div className="space-y-2">

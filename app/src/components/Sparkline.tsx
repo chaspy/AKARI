@@ -22,7 +22,7 @@ export function Sparkline({ data, width = 240, height = 56 }: SparkProps) {
       <path
         d={d}
         fill="none"
-        stroke={trendDown ? 'rgb(98 183 156)' : 'rgb(216 110 154)'}
+        stroke={trendDown ? 'var(--primary)' : 'oklch(0.62 0.22 18)'}
         strokeWidth="2"
       />
       {xs.map((x, i) =>
@@ -32,7 +32,7 @@ export function Sparkline({ data, width = 240, height = 56 }: SparkProps) {
             cx={x}
             cy={ys[i]}
             r="3"
-            fill={trendDown ? 'rgb(98 183 156)' : 'rgb(216 110 154)'}
+            fill={trendDown ? 'var(--primary)' : 'oklch(0.62 0.22 18)'}
           />
         )
       )}

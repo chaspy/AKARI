@@ -29,22 +29,22 @@ function Home() {
   ];
 
   return (
-    <div className="min-h-[100dvh] bg-white pb-[calc(64px+env(safe-area-inset-bottom))]">
+    <div className="min-h-[100dvh] bg-background pb-[calc(64px+env(safe-area-inset-bottom))]">
       {/* Header - NO BORDER */}
       <header
-        className="bg-[rgb(255,239,245)] px-4 pb-2"
+        className="bg-background px-4 pb-2"
         style={{ paddingTop: 'env(safe-area-inset-top, 12px)' }}
       >
         <div className="flex items-center justify-between max-w-md mx-auto">
           <div>
-            <h1 className="text-2xl font-bold text-[rgb(25,25,25)]">AKARI</h1>
-            <p className="text-sm text-[rgb(99,102,106)]">ダイエット記録</p>
+            <h1 className="text-2xl font-bold text-foreground">AKARI</h1>
+            <p className="text-sm text-muted-foreground">ダイエット記録</p>
           </div>
           <button
-            className="p-2 rounded-full hover:bg-white/50 transition-colors"
+            className="p-2 rounded-full hover:bg-accent/30 transition-colors"
             onClick={() => window.location.href = '/settings'}
           >
-            <Settings className="h-5 w-5 text-[rgb(99,102,106)]" />
+            <Settings className="h-5 w-5 text-muted-foreground" />
           </button>
         </div>
       </header>
@@ -53,7 +53,7 @@ function Home() {
       <main className="px-4 mt-6 space-y-6 max-w-md mx-auto">
 
         {/* ProgressCard - Hero with Ring */}
-        <div className="rounded-2xl bg-white shadow-[0_2px_10px_rgba(0,0,0,0.05)] p-4 flex flex-col items-center">
+        <div className="rounded-2xl bg-card border border-border shadow-sm p-4 flex flex-col items-center">
           <div className="relative w-[200px] h-[200px]">
             <GradientRing
               value={progress}
@@ -63,20 +63,20 @@ function Home() {
             {/* Center text with proper z-index */}
             <div className="absolute inset-0 grid place-items-center z-10">
               <div className="text-center">
-                <div className="text-3xl font-bold text-[rgb(25,25,25)]">{currentWeight}kg</div>
-                <div className="text-sm text-[rgb(99,102,106)]">あと{remain}kgで目標</div>
+                <div className="text-3xl font-bold text-foreground">{currentWeight}kg</div>
+                <div className="text-sm text-muted-foreground">あと{remain}kgで目標</div>
               </div>
             </div>
           </div>
           {/* Single line subtitle */}
-          <p className="mt-3 text-sm text-[rgb(99,102,106)]">
+          <p className="mt-3 text-sm text-muted-foreground">
             目標 {targetWeight}kg / 開始 {startWeight}kg ・ 達成率 {progress}%
           </p>
         </div>
 
         {/* SparklineCard - Everything contained within p-4 */}
-        <div className="rounded-2xl bg-white shadow-[0_2px_10px_rgba(0,0,0,0.05)] p-4">
-          <div className="text-sm text-[rgb(99,102,106)] mb-2">最近の傾向</div>
+        <div className="rounded-2xl bg-card border border-border shadow-sm p-4">
+          <div className="text-sm text-muted-foreground mb-2">最近の傾向</div>
           <div className="w-full flex justify-center">
             <Sparkline data={recentHistory} width={240} height={56} />
           </div>
@@ -88,22 +88,22 @@ function Home() {
         {/* Actions - 2 cards (height ≥88px) */}
         <div className="grid grid-cols-2 gap-4">
           <button
-            className="rounded-2xl bg-white shadow-[0_2px_10px_rgba(0,0,0,0.05)] min-h-[88px] p-4 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] active:shadow-[inset_0_1px_2px_rgba(0,0,0,0.12)] transition-all flex items-center justify-center"
+            className="rounded-2xl bg-card border border-border shadow-sm min-h-[88px] p-4 hover:shadow-md active:shadow-inner transition-all flex items-center justify-center"
             onClick={() => window.location.href = '/log'}
           >
-            <span className="font-bold text-[rgb(25,25,25)]">食事を記録</span>
+            <span className="font-bold text-foreground">食事を記録</span>
           </button>
           <button
-            className="rounded-2xl bg-white shadow-[0_2px_10px_rgba(0,0,0,0.05)] min-h-[88px] p-4 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] active:shadow-[inset_0_1px_2px_rgba(0,0,0,0.12)] transition-all flex items-center justify-center"
+            className="rounded-2xl bg-card border border-border shadow-sm min-h-[88px] p-4 hover:shadow-md active:shadow-inner transition-all flex items-center justify-center"
             onClick={() => window.location.href = '/coach'}
           >
-            <span className="font-bold text-[rgb(25,25,25)]">アドバイス</span>
+            <span className="font-bold text-foreground">アドバイス</span>
           </button>
         </div>
 
         {/* MessageCard - White card with light mint background */}
-        <div className="rounded-2xl bg-[rgba(217,241,230,0.3)] p-4 text-center">
-          <span className="text-[rgb(25,25,25)]">ここまでで{weightLost}kg減量しました</span>
+        <div className="rounded-2xl bg-primary/10 p-4 text-center">
+          <span className="text-foreground">ここまでで{weightLost}kg減量しました</span>
         </div>
       </main>
     </div>

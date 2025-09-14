@@ -32,11 +32,8 @@ function NotificationButton({ enabled, onEnable }: NotificationButtonProps) {
   }
 
   return (
-    <button
-      onClick={onEnable}
-      className="w-full group"
-    >
-      <div className="bg-akari-primary hover:bg-akari-primary/90 text-white px-6 py-4 rounded-xl shadow-md hover:shadow-lg transform transition-all duration-200 hover:scale-[1.02]">
+    <button onClick={onEnable} className="w-full group">
+      <div className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-4 rounded-xl shadow-md hover:shadow-lg transform transition-all duration-200 hover:scale-[1.02]">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mr-4">
@@ -50,7 +47,7 @@ function NotificationButton({ enabled, onEnable }: NotificationButtonProps) {
             </div>
           </div>
           <div className="hidden md:block">
-            <ChevronRight className="w-5 h-5 text-white/70 group-hover:text-white transition-colors" />
+            <ChevronRight className="w-5 h-5 text-primary-foreground/70 group-hover:text-primary-foreground transition-colors" />
           </div>
         </div>
       </div>
