@@ -29,10 +29,10 @@ function Home() {
   ];
 
   return (
-    <div className="min-h-[100dvh] bg-background pb-[calc(64px+env(safe-area-inset-bottom))]">
+    <div className="min-h-[100dvh] bg-background pb-[calc(64px+env(safe-area-inset-bottom))]" data-ui-version="home-v2">
       {/* Header - NO BORDER */}
       <header
-        className="bg-background px-4 pb-2"
+        className="bg-background px-5 pb-2"
         style={{ paddingTop: 'env(safe-area-inset-top, 12px)' }}
       >
         <div className="flex items-center justify-between max-w-md mx-auto">
@@ -50,15 +50,15 @@ function Home() {
       </header>
 
       {/* Main Content - STRICT 8pt grid (px-4 mt-6 space-y-6) */}
-      <main className="px-4 mt-6 space-y-6 max-w-md mx-auto">
+      <main className="px-5 mt-6 space-y-7 max-w-md mx-auto">
 
         {/* ProgressCard - Hero with Ring */}
-        <div className="rounded-2xl bg-card border border-border shadow-sm p-5 flex flex-col items-center">
-          <div className="relative w-[200px] h-[200px]">
+        <div className="rounded-2xl bg-card border border-border shadow-sm p-6 flex flex-col items-center">
+          <div className="relative w-[176px] h-[176px]">
             <GradientRing
               value={progress}
-              size={200}
-              thickness={14}
+              size={176}
+              thickness={12}
             />
             {/* Center text */}
             <div className="absolute inset-0 grid place-items-center z-10">
@@ -69,7 +69,7 @@ function Home() {
             </div>
           </div>
           {/* Secondary metrics (centered, non-wrapping) */}
-          <div className="mt-4 grid grid-cols-3 gap-3 w-full">
+          <div className="mt-5 grid grid-cols-3 gap-4 w-full">
             <div className="text-center">
               <div className="text-xs text-muted-foreground">目標</div>
               <div className="text-base font-semibold text-foreground">{targetWeight}kg</div>
@@ -86,8 +86,8 @@ function Home() {
         </div>
 
         {/* SparklineCard - Everything contained within p-4 */}
-        <div className="rounded-2xl bg-card border border-border shadow-sm p-4">
-          <div className="text-sm text-muted-foreground mb-2">最近の傾向</div>
+        <div className="rounded-2xl bg-card border border-border shadow-sm p-6">
+          <div className="text-sm text-muted-foreground mb-3">最近の傾向</div>
           <div className="w-full flex justify-center">
             <Sparkline data={recentHistory} width={240} height={56} />
           </div>
@@ -97,15 +97,15 @@ function Home() {
         </div>
 
         {/* Actions - 2 cards (height ≥88px) */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-5">
           <button
-            className="rounded-2xl bg-card border border-border shadow-sm min-h-[88px] p-4 hover:shadow-md active:shadow-inner transition-all flex items-center justify-center"
+            className="rounded-2xl bg-card border border-border shadow-sm min-h-[88px] p-5 hover:shadow-md active:shadow-inner transition-all flex items-center justify-center"
             onClick={() => window.location.href = '/log'}
           >
             <span className="font-bold text-base text-foreground">食事を記録</span>
           </button>
           <button
-            className="rounded-2xl bg-card border border-border shadow-sm min-h-[88px] p-4 hover:shadow-md active:shadow-inner transition-all flex items-center justify-center"
+            className="rounded-2xl bg-card border border-border shadow-sm min-h-[88px] p-5 hover:shadow-md active:shadow-inner transition-all flex items-center justify-center"
             onClick={() => window.location.href = '/coach'}
           >
             <span className="font-bold text-base text-foreground">アドバイス</span>
@@ -113,7 +113,7 @@ function Home() {
         </div>
 
         {/* MessageCard - White card with light mint background */}
-        <div className="rounded-2xl bg-primary/10 p-4 text-center">
+        <div className="rounded-2xl bg-primary/10 p-5 text-center">
           <span className="text-foreground">ここまでで{weightLost}kg減量しました</span>
         </div>
       </main>

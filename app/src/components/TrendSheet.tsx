@@ -26,17 +26,17 @@ export function TrendSheet({ data, weeklyChange }: TrendSheetProps) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <button className="w-full text-sm text-center text-[rgb(99,102,106)] underline-offset-2 hover:underline">
+        <button className="w-full text-xs text-center text-muted-foreground bg-muted rounded-md py-2">
           先週比{' '}
-          <span className={isPositive ? 'text-[rgb(98,183,156)]' : 'text-[rgb(216,110,154)]'}>
+          <span className={isPositive ? 'text-primary' : 'text-[oklch(0.62_0.22_18)]'}>
             {weeklyChange > 0 ? '+' : ''}{weeklyChange}kg
           </span>
-          （グラフを見る）
+          {' '}（グラフを見る）
         </button>
       </SheetTrigger>
       <SheetContent side="bottom" className="h-[80vh]">
         <SheetHeader>
-          <SheetTitle className="text-[rgb(25,25,25)]">体重の推移</SheetTitle>
+          <SheetTitle className="text-foreground">体重の推移</SheetTitle>
         </SheetHeader>
         <div className="mt-6 h-[60vh]">
           <ResponsiveContainer width="100%" height="100%">
