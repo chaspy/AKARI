@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="256" fill="#1A2A4A"/>
+
+  <!-- Light bulb icon representing AKARI (light) -->
+  <g transform="translate(256, 256)">
+    <!-- Bulb shape -->
+    <path d="M-60 -80 C-60 -120, -30 -150, 0 -150 C30 -150, 60 -120, 60 -80 C60 -40, 40 -20, 40 20 L40 60 L-40 60 L-40 20 C-40 -20, -60 -40, -60 -80 Z" fill="#FFB300"/>
+
+    <!-- Light rays -->
+    <g stroke="#35C6A6" stroke-width="8" stroke-linecap="round">
+      <line x1="0" y1="-180" x2="0" y2="-210"/>
+      <line x1="90" y1="-120" x2="110" y2="-140"/>
+      <line x1="120" y1="-30" x2="150" y2="-30"/>
+      <line x1="-90" y1="-120" x2="-110" y2="-140"/>
+      <line x1="-120" y1="-30" x2="-150" y2="-30"/>
+    </g>
+
+    <!-- Base of bulb -->
+    <rect x="-30" y="60" width="60" height="20" fill="#35C6A6"/>
+    <rect x="-25" y="80" width="50" height="10" fill="#35C6A6"/>
+    <rect x="-25" y="90" width="50" height="10" fill="#35C6A6"/>
+  </g>
+</svg>

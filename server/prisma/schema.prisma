@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Subscription {
+  id        String   @id @default(uuid())
+  endpoint  String   @unique
+  data      String   // JSON string containing the full subscription
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Meal {
+  id        String   @id @default(uuid())
+  at        DateTime
+  slot      String   // breakfast|lunch|dinner|snack
+  memo      String?
+  photoUrl  String?
+  calories  Int?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Setting {
+  id         Int      @id @default(1)
+  tz         String   @default("Asia/Tokyo")
+  remind08   Boolean  @default(true)
+  remind1230 Boolean  @default(true)
+  remind19   Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
