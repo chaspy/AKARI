@@ -7,8 +7,8 @@ import { Kpi } from '@/components/Kpi';
 
 // Main Home Component with proper layout
 function Home() {
-  const isLite = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('lite') === '1';
-  if (isLite) return <DashboardLite />;
+  const useLegacy = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('legacy') === '1';
+  if (!useLegacy) return <DashboardLite />;
   const today = new Date();
   // 表示用ダミー（後で実データに差し替え）
   const [weightDiff] = useState(-0.4);
