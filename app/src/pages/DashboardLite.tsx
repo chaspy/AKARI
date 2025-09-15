@@ -26,7 +26,7 @@ export default function DashboardLite() {
         </div>
       </header>
 
-      <main className="mt-4 space-y-6">
+      <main className="mt-6 space-y-7">
         {/* 日付 */}
         <div className="text-center text-sm text-muted-foreground">
           {today.toLocaleDateString('ja-JP', { month: 'numeric', day: 'numeric' })}
@@ -39,7 +39,7 @@ export default function DashboardLite() {
             <GradientRing value={calPercent} size={200} thickness={14} startColor="oklch(0.86 0.12 35)" endColor="oklch(0.72 0.14 35)" />
             <div className="absolute inset-0 grid place-items-center">
               <div className="text-center">
-                <div className="text-4xl font-bold leading-none">{calPercent}%</div>
+                <div className="text-5xl font-bold leading-none">{calPercent}%</div>
                 <div className="text-xs text-muted-foreground mt-2">{calories} / {calGoal} kcal</div>
               </div>
             </div>
@@ -47,7 +47,7 @@ export default function DashboardLite() {
         </div>
 
         {/* KPI列（文字少なくアイコン＋値のみ） */}
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 gap-6">
           <Kpi icon={<ArrowDownRight className="w-4 h-4" />} value={`${weightDiff}`} unit="kg" label="体重変化" />
           <Kpi icon={<Activity className="w-4 h-4" />} value={`${steps}`} label="歩数" />
           <Kpi icon={<Clock className="w-4 h-4" />} value={`${activeMin}`} unit="min" label="アクティブ" />
@@ -61,10 +61,10 @@ export default function DashboardLite() {
 
         {/* アクション */}
         <div className="grid grid-cols-2 gap-5">
-          <button className="rounded-2xl bg-card border border-border shadow-sm min-h-[64px] p-4 hover:shadow-md" onClick={() => (window.location.href = '/log')}>
+          <button className="rounded-2xl bg-card border border-border shadow-sm min-h-[56px] p-4 hover:shadow-md" onClick={() => (window.location.href = '/log')}>
             <span className="text-sm font-medium">食事を記録</span>
           </button>
-          <button className="rounded-2xl bg-card border border-border shadow-sm min-h-[64px] p-4 hover:shadow-md" onClick={() => (window.location.href = '/coach')}>
+          <button className="rounded-2xl bg-card border border-border shadow-sm min-h-[56px] p-4 hover:shadow-md" onClick={() => (window.location.href = '/coach')}>
             <span className="text-sm font-medium">アドバイス</span>
           </button>
         </div>
