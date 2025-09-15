@@ -54,7 +54,7 @@ function Home() {
 
         {/* ProgressCard - Hero with Ring */}
         <div className="rounded-2xl bg-card border border-border shadow-sm p-6 flex flex-col items-center">
-          <div className="relative w-[176px] h-[176px]">
+          <div className="relative w-[176px] h-[176px] mb-5">
             <GradientRing
               value={progress}
               size={176}
