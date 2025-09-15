@@ -55,7 +55,7 @@ function Home() {
 
         {/* ProgressCard - Hero with Ring */}
         <div className="rounded-2xl bg-card border border-border shadow-sm p-6 flex flex-col items-center">
-          <div className="relative w-[176px] h-[176px] mb-8">
+          <div className="relative w-[176px] h-[176px] mb-12">
             <GradientRing
               value={progress}
               size={176}
@@ -64,13 +64,13 @@ function Home() {
             {/* Center text */}
             <div className="absolute inset-0 grid place-items-center z-10">
               <div className="text-center">
-                <div className="text-4xl font-bold text-foreground leading-none">{currentWeight}kg</div>
-                <div className="text-sm text-muted-foreground mt-1">あと{remain}kgで目標</div>
+                <div className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">{currentWeight}kg</div>
+                <div className="text-sm text-muted-foreground mt-1 leading-tight">あと{remain}kgで目標</div>
               </div>
             </div>
           </div>
           {/* Secondary metrics (centered, non-wrapping) */}
-          <div className="mt-6 grid grid-cols-3 gap-5 w-full">
+          <div className="mt-8 grid grid-cols-3 gap-6 w-full">
             <div className="text-center">
               <div className="text-xs text-muted-foreground">目標</div>
               <div className="text-base font-semibold text-foreground">{targetWeight}kg</div>
