@@ -55,22 +55,18 @@ function Home() {
 
         {/* ProgressCard - Hero with Ring */}
         <div className="rounded-2xl bg-card border border-border shadow-sm p-6 flex flex-col items-center">
-          <div className="relative w-[176px] h-[176px] mb-12">
-            <GradientRing
-              value={progress}
-              size={176}
-              thickness={12}
-            />
-            {/* Center text */}
-            <div className="absolute inset-0 grid place-items-center z-10">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">{currentWeight}kg</div>
-                <div className="text-sm text-muted-foreground mt-1 leading-tight">あと{remain}kgで目標</div>
-              </div>
+          {/* Ring + Text（重なり回避のため縦積み） */}
+          <div className="flex flex-col items-center mb-6">
+            <div className="w-[176px] h-[176px]">
+              <GradientRing value={progress} size={176} thickness={12} />
+            </div>
+            <div className="text-center mt-3">
+              <div className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">{currentWeight}kg</div>
+              <div className="text-sm text-muted-foreground mt-1 leading-tight">あと{remain}kgで目標</div>
             </div>
           </div>
           {/* Secondary metrics (centered, non-wrapping) */}
-          <div className="mt-8 grid grid-cols-3 gap-6 w-full">
+          <div className="mt-6 grid grid-cols-3 gap-6 w-full">
             <div className="text-center">
               <div className="text-xs text-muted-foreground">目標</div>
               <div className="text-base font-semibold text-foreground">{targetWeight}kg</div>
