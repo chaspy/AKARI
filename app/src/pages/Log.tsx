@@ -12,6 +12,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
+import { Screen } from '@/components/Screen';
 
 type MealSlot = 'breakfast' | 'lunch' | 'dinner' | 'snack';
 
@@ -103,8 +104,8 @@ function Log() {
   };
 
   return (
-    // フッタ(TabBar)と重ならないように下部余白を確保
-    <div className="max-w-md mx-auto space-y-4 pb-[calc(64px+env(safe-area-inset-bottom))]">
+    <Screen>
+    <div className="space-y-5">
       {/* 日付選択と記録 */}
       <Card>
         <CardHeader>
@@ -225,6 +226,7 @@ function Log() {
         </Card>
       )}
     </div>
+    </Screen>
   );
 }
 

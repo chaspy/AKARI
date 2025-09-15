@@ -59,7 +59,7 @@ function Settings() {
         className="bg-background px-4 pb-2"
         style={{ paddingTop: 'env(safe-area-inset-top, 12px)' }}
       >
-        <div className="flex items-center max-w-md mx-auto">
+        <div className="flex items-center px-6">
           <button
             className="mr-3 p-2 rounded-full hover:bg-white/50 transition-colors"
             onClick={() => navigate(-1)}
@@ -74,7 +74,7 @@ function Settings() {
       </header>
 
       {/* Main Content with STRICT 8pt grid */}
-      <main className="px-4 mt-6 space-y-6 max-w-md mx-auto">
+      <main className="px-6 mt-6 space-y-6 max-w-md mx-auto">
         {/* Notification Settings Card - NO BORDER */}
         <div className="rounded-2xl bg-card border border-border shadow-sm p-6">
           <h2 className="text-base font-semibold text-foreground mb-4">通知設定</h2>

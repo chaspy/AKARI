@@ -9,6 +9,7 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Screen } from '@/components/Screen';
 
 interface CoachAdvice {
   summary: string;
@@ -49,8 +50,8 @@ function Coach() {
   };
 
   return (
-    // フッタ(TabBar)と重ならないように下部余白を確保
-    <div className="max-w-md mx-auto space-y-4 pb-[calc(64px+env(safe-area-inset-bottom))]">
+    <Screen>
+    <div className="space-y-5">
       {/* コーチング説明 */}
       <Card>
         <CardHeader>
@@ -153,6 +154,7 @@ function Coach() {
         </>
       )}
     </div>
+    </Screen>
   );
 }
 
