@@ -3,6 +3,7 @@ import { GradientRing } from '@/components/GradientRing';
 import { Sparkline } from '@/components/Sparkline';
 import { TrendSheet } from '@/components/TrendSheet';
 import { Settings } from 'lucide-react';
+import { Screen } from '@/components/Screen';
 
 // Main Home Component with proper layout
 function Home() {
@@ -29,7 +30,7 @@ function Home() {
   ];
 
   return (
-    <div className="min-h-[100dvh] bg-background pb-[calc(64px+env(safe-area-inset-bottom))]" data-ui-version="home-v2">
+    <Screen data-ui-version="home-v2">
       {/* Header - NO BORDER */}
       <header
         className="bg-background px-5 pb-2"
@@ -50,11 +51,11 @@ function Home() {
       </header>
 
       {/* Main Content - STRICT 8pt grid (px-4 mt-6 space-y-6) */}
-      <main className="px-5 mt-6 space-y-7 max-w-md mx-auto">
+      <main className="mt-6 space-y-7">
 
         {/* ProgressCard - Hero with Ring */}
         <div className="rounded-2xl bg-card border border-border shadow-sm p-6 flex flex-col items-center">
-          <div className="relative w-[176px] h-[176px] mb-5">
+          <div className="relative w-[176px] h-[176px] mb-8">
             <GradientRing
               value={progress}
               size={176}
@@ -69,7 +70,7 @@ function Home() {
             </div>
           </div>
           {/* Secondary metrics (centered, non-wrapping) */}
-          <div className="mt-5 grid grid-cols-3 gap-4 w-full">
+          <div className="mt-6 grid grid-cols-3 gap-5 w-full">
             <div className="text-center">
               <div className="text-xs text-muted-foreground">目標</div>
               <div className="text-base font-semibold text-foreground">{targetWeight}kg</div>
@@ -117,7 +118,7 @@ function Home() {
           <span className="text-foreground">ここまでで{weightLost}kg減量しました</span>
         </div>
       </main>
-    </div>
+    </Screen>
   );
 }
 
