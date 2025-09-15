@@ -11,6 +11,11 @@ export default defineConfig({
     },
   },
   server: {
+    // devで変更が反映されない環境向け。ファイル監視をポーリングに切替
+    watch: {
+      usePolling: true,
+      interval: 200,
+    },
     host: true, // 0.0.0.0でリッスン（すべてのネットワークインターフェースで受け付ける）
     port: 5173,
     allowedHosts: [
