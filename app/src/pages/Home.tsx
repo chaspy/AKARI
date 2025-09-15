@@ -56,26 +56,26 @@ function Home() {
         {/* ProgressCard - Hero with Ring */}
         <div className="rounded-2xl bg-card border border-border shadow-sm p-6 flex flex-col items-center">
           {/* Ring + Text（重なり回避のため縦積み） */}
-          <div className="flex flex-col items-center mb-6">
+          <div className="flex flex-col items-center mb-7">
             <div className="w-[176px] h-[176px]">
               <GradientRing value={progress} size={176} thickness={12} />
             </div>
-            <div className="text-center mt-3">
+            <div className="text-center mt-4">
               <div className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">{currentWeight}kg</div>
-              <div className="text-sm text-muted-foreground mt-1 leading-tight">あと{remain}kgで目標</div>
+              <div className="text-sm text-muted-foreground mt-1 leading-normal">あと{remain}kgで目標</div>
             </div>
           </div>
           {/* Secondary metrics (centered, non-wrapping) */}
           <div className="mt-6 grid grid-cols-3 gap-6 w-full">
-            <div className="text-center">
+            <div className="text-center space-y-1.5">
               <div className="text-xs text-muted-foreground">目標</div>
               <div className="text-base font-semibold text-foreground">{targetWeight}kg</div>
             </div>
-            <div className="text-center">
+            <div className="text-center space-y-1.5">
               <div className="text-xs text-muted-foreground">開始</div>
               <div className="text-base font-semibold text-foreground">{startWeight}kg</div>
             </div>
-            <div className="text-center">
+            <div className="text-center space-y-1.5">
               <div className="text-xs text-muted-foreground">達成率</div>
               <div className="text-base font-semibold text-foreground">{progress}%</div>
             </div>
@@ -84,7 +84,7 @@ function Home() {
 
         {/* SparklineCard - Everything contained within p-4 */}
         <div className="rounded-2xl bg-card border border-border shadow-sm p-6">
-          <div className="text-sm text-muted-foreground mb-3">最近の傾向</div>
+          <div className="text-sm text-muted-foreground mb-4">最近の傾向</div>
           <div className="w-full flex justify-center">
             <Sparkline data={recentHistory} width={240} height={56} />
           </div>
