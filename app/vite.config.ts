@@ -11,6 +11,7 @@ export default defineConfig({
     },
   },
   server: {
+    strictPort: true,
     // devで変更が反映されない環境向け。ファイル監視をポーリングに切替
     watch: {
       usePolling: true,
