@@ -1,6 +1,13 @@
 // Web Push notification subscription handler
 export async function enablePush(publicVapidKeyB64Url: string): Promise<boolean> {
   try {
+    // In dev, avoid registering SW unless explicitly allowed via ?sw=1
+    const params = new URLSearchParams(window.location.search);
+    const allowSwInDev = params.get('sw') === '1';
+    if (import.meta.env.DEV && !allowSwInDev) {
+      alert('開発モードではService Workerを登録しません（?sw=1で有効化可能）');
+      return false;
+    }
     // Check if VAPID key is provided
     if (!publicVapidKeyB64Url) {
       console.error('VAPID public key is not configured');

@@ -26,13 +26,15 @@ export function TrendSheet({ data, weeklyChange }: TrendSheetProps) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <button className="w-full text-xs text-center text-muted-foreground bg-muted rounded-md py-2">
-          先週比{' '}
-          <span className={isPositive ? 'text-primary' : 'text-[oklch(0.62_0.22_18)]'}>
-            {weeklyChange > 0 ? '+' : ''}{weeklyChange}kg
-          </span>
-          {' '}（グラフを見る）
-        </button>
+        <div className="w-full flex justify-center">
+          <button className="w-max px-3 py-1.5 text-xs text-center text-muted-foreground bg-muted border border-border rounded-full">
+            先週比{' '}
+            <span className={isPositive ? 'text-primary' : 'text-destructive'}>
+              {weeklyChange > 0 ? '+' : ''}{weeklyChange}kg
+            </span>
+            {' '}（グラフを見る）
+          </button>
+        </div>
       </SheetTrigger>
       <SheetContent side="bottom" className="h-[80vh]">
         <SheetHeader>
