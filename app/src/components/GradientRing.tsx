@@ -2,12 +2,16 @@ type RingProps = {
   size?: number;
   thickness?: number;
   value: number;
+  startColor?: string;
+  endColor?: string;
 };
 
 export function GradientRing({
   size = 200,
   thickness = 14,
   value,
+  startColor = 'oklch(0.92 0.05 160)',
+  endColor = 'var(--primary)',
 }: RingProps) {
   const r = (size - thickness) / 2;
   const c = 2 * Math.PI * r;
@@ -18,8 +22,8 @@ export function GradientRing({
     <svg width={size} height={size}>
       <defs>
         <linearGradient id={id} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="oklch(0.92 0.05 160)" />
-          <stop offset="100%" stopColor="var(--primary)" />
+          <stop offset="0%" stopColor={startColor} />
+          <stop offset="100%" stopColor={endColor} />
         </linearGradient>
       </defs>
       <circle
