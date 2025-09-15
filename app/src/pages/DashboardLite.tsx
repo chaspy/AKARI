@@ -26,7 +26,7 @@ export default function DashboardLite() {
         </div>
       </header>
 
-      <main className="mt-6 space-y-7">
+      <main className="mt-6 space-y-8">
         {/* 日付 */}
         <div className="text-center text-sm text-muted-foreground">
           {today.toLocaleDateString('ja-JP', { month: 'numeric', day: 'numeric' })}
@@ -35,7 +35,7 @@ export default function DashboardLite() {
 
         {/* リング */}
         <div className="rounded-2xl bg-card border border-border shadow-sm p-6">
-          <div className="relative w-[200px] h-[200px] mx-auto">
+          <div className="relative w-[200px] h-[200px] mx-auto mb-6">
             <GradientRing value={calPercent} size={200} thickness={14} startColor="oklch(0.86 0.12 35)" endColor="oklch(0.72 0.14 35)" />
             <div className="absolute inset-0 grid place-items-center">
               <div className="text-center">
@@ -47,16 +47,16 @@ export default function DashboardLite() {
         </div>
 
         {/* KPI列（文字少なくアイコン＋値のみ） */}
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 gap-6 text-center">
           <Kpi icon={<ArrowDownRight className="w-4 h-4" />} value={`${weightDiff}`} unit="kg" label="体重変化" />
           <Kpi icon={<Activity className="w-4 h-4" />} value={`${steps}`} label="歩数" />
           <Kpi icon={<Clock className="w-4 h-4" />} value={`${activeMin}`} unit="min" label="アクティブ" />
         </div>
 
         {/* WEEKLYスニペット */}
-        <div className="rounded-2xl bg-card border border-border shadow-sm p-4 text-xs text-muted-foreground flex items-center justify-between">
-          <div>WEEKLY {new Date(today.getTime()-6*86400000).toLocaleDateString('ja-JP',{month:'numeric',day:'numeric'})} - {today.toLocaleDateString('ja-JP',{month:'numeric',day:'numeric'})}</div>
-          <div className="text-foreground">3295 kcal</div>
+        <div className="rounded-2xl bg-card border border-border shadow-sm p-4 text-xs text-muted-foreground flex items-center justify-between flex-wrap gap-2">
+          <div className="truncate max-w-[65%]">WEEKLY {new Date(today.getTime()-6*86400000).toLocaleDateString('ja-JP',{month:'numeric',day:'numeric'})} - {today.toLocaleDateString('ja-JP',{month:'numeric',day:'numeric'})}</div>
+          <div className="text-foreground shrink-0">3295 kcal</div>
         </div>
 
         {/* アクション */}
