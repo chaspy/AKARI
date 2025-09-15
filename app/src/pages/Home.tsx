@@ -51,7 +51,7 @@ function Home() {
       </header>
 
       {/* Main Content - STRICT 8pt grid (px-4 mt-6 space-y-6) */}
-      <main className="mt-6 space-y-7">
+      <main className="mt-6 space-y-8">
 
         {/* ProgressCard - Hero with Ring */}
         <div className="rounded-2xl bg-card border border-border shadow-sm p-6 flex flex-col items-center">
@@ -67,17 +67,17 @@ function Home() {
           </div>
           {/* Secondary metrics (centered, non-wrapping) */}
           <div className="mt-6 grid grid-cols-3 gap-6 w-full">
-            <div className="text-center space-y-1.5">
+            <div className="text-center space-y-2">
               <div className="text-xs text-muted-foreground">目標</div>
-              <div className="text-base font-semibold text-foreground">{targetWeight}kg</div>
+              <div className="text-lg font-semibold text-foreground">{targetWeight}kg</div>
             </div>
-            <div className="text-center space-y-1.5">
+            <div className="text-center space-y-2">
               <div className="text-xs text-muted-foreground">開始</div>
-              <div className="text-base font-semibold text-foreground">{startWeight}kg</div>
+              <div className="text-lg font-semibold text-foreground">{startWeight}kg</div>
             </div>
-            <div className="text-center space-y-1.5">
+            <div className="text-center space-y-2">
               <div className="text-xs text-muted-foreground">達成率</div>
-              <div className="text-base font-semibold text-foreground">{progress}%</div>
+              <div className="text-lg font-semibold text-foreground">{progress}%</div>
             </div>
           </div>
         </div>
@@ -94,7 +94,7 @@ function Home() {
         </div>
 
         {/* Actions - 2 cards (height ≥88px) */}
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-2 gap-6">
           <button
             className="rounded-2xl bg-card border border-border shadow-sm min-h-[88px] p-5 hover:shadow-md active:shadow-inner transition-all flex items-center justify-center"
             onClick={() => window.location.href = '/log'}

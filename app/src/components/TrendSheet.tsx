@@ -27,7 +27,7 @@ export function TrendSheet({ data, weeklyChange }: TrendSheetProps) {
     <Sheet>
       <SheetTrigger asChild>
         <div className="w-full flex justify-center">
-          <button className="w-max px-3 py-1.5 text-xs text-center text-muted-foreground bg-muted border border-border rounded-full">
+          <button className="w-max px-4 py-2 text-sm text-center text-muted-foreground bg-muted border border-border rounded-full shadow-sm">
             先週比{' '}
             <span className={isPositive ? 'text-primary' : 'text-destructive'}>
               {weeklyChange > 0 ? '+' : ''}{weeklyChange}kg
